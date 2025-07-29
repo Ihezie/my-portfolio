@@ -3,7 +3,7 @@ import { navLinks, socials } from "@/constants";
 
 const Navbar = () => {
   return (
-    <header className="con-px flex justify-between pt-10 items-center fixed w-full z-20 abs-x-center">
+    <header className="con-px flex justify-between pt-5 items-center fixed w-full z-20 abs-x-center">
       <button
         type="button"
         className="btn bg-black/75 border-black font-bold uppercase text-[15px]"
