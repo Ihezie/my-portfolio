@@ -2,6 +2,8 @@ import githubIcon from "./public/animated-icons/wired-outline-2572-logo-github-h
 import twitterIcon from "./public/animated-icons/wired-outline-2714-logo-x-hover-pinch.json";
 import linkedinIcon from "./public/animated-icons/wired-outline-2632-logo-circle-linkedin-hover-draw.json";
 
+
+
 const socials = [
   {
     title: "github",
