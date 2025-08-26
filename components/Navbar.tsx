@@ -37,9 +37,9 @@ const Navbar = () => {
 
         <div className="flex gap-3 items-center sm:gap-5">
           {socials.map(({ title, link, icon }) => {
-            let size = isLarge ? 35 : 32;
+            let size = 40;
             if (title == "X/twitter") {
-              size = isLarge ? 31 : 27;
+              size = 36;
             }
             return (
               <a className="inline-block" href={link} key={title}>
@@ -50,13 +50,13 @@ const Navbar = () => {
         </div>
       </header>
       <nav
-        className={`gap-5 items-center flex bottom-[5vh] abs-x-center fixed py-2.5 px-5 sm:px-7 rounded-full backdrop-blur-xs bg-black/40 duration-300 sm:gap-11 border border-gray-800 transition-transform z-20 ${
+        className={`gap-5 items-center flex bottom-[5vh] abs-x-center fixed py-2.5 px-5 sm:px-7 rounded-full backdrop-blur-xs bg-black/50 duration-300 sm:gap-11 border border-gray-800 transition-transform z-20 ${
           isVisible ? "" : "translate-y-[100px]"
         }`}
       >
         {navLinks.map((link) => (
           <a
-            className="capitalize text-[13px] sm:text-base font-audiowide"
+            className="capitalize text-[13px] sm:text-base font-audiowide hover:text-green-300"
             key={link}
             href={`#${link}`}
           >
