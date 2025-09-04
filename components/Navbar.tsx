@@ -34,12 +34,11 @@ const Navbar = () => {
         >
           action
         </button>
-
         <div className="flex gap-3 items-center sm:gap-5">
           {socials.map(({ title, link, icon }) => {
-            let size = 40;
+            let size = 37;
             if (title == "X/twitter") {
-              size = 36;
+              size = 33;
             }
             return (
               <a className="inline-block" href={link} key={title}>

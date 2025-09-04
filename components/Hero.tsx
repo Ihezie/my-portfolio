@@ -53,9 +53,11 @@ const Hero = () => {
           </button>
           <button type="button" className="btn border">
             My resume
+
           </button>
         </div>
       </div>
+      
       <Canvas camera={{ fov: 30, position: [0, 0, 10] }}>
         <fog attach="fog" args={["#000000", 8, fogFarPoint]} />
         <OrbitAnimation moonData={moonData} />

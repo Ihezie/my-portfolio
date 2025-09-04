@@ -29,15 +29,15 @@ const ProjectCard = ({
     <div
       className={`rounded-[30px] overflow-hidden border-[1.5] bg-black mx-auto lg:h-[500px] lg:grid ${
         isEven ? "lg:grid-cols-[45%_55%]" : "lg:grid-cols-[55%_45%]"
-      } group project-card`}
+      } group project-card sticky top-[128px] sm:top-[152px] md:top-[170px] lg:top-[185px]`}
     >
       <div className={isEven ? "" : "order-2"}>
         <div
-          className={`sm:flex sm:px-6 sm:border-b-[1.5] sm:justify-between sm:items-center sm:mb-8 sm:py-1.5 lg:flex lg:items-start lg:flex-col-reverse lg:border-0 lg:gap-23 lg:px-8 lg:mb-3 lg:pt-7 xl:gap-32 ${
+          className={`sm:flex sm:px-6 sm:justify-between sm:items-center sm:mb-8 sm:pt-3 lg:flex lg:items-start lg:flex-col-reverse lg:border-0 lg:gap-23 lg:px-8 lg:mb-3 lg:pt-7 xl:gap-32 ${
             isEven ? "" : "xl:pl-20"
           }`}
         >
-          <h2 className="pb-2 pt-3 border-b-[1.5] uppercase font-bold text-lg px-5 font-audiowide sm:text-xl sm:border-b-0 sm:text-left sm:px-0 sm:py-0 sm:mb-0 md:text-2xl lg:text-3xl">
+          <h2 className="pt-3 uppercase font-bold text-lg px-5 font-audiowide sm:text-xl sm:text-left sm:px-0 sm:py-0 sm:mb-0 md:text-2xl lg:text-3xl">
             {title}
           </h2>
           <div

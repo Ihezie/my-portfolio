@@ -13,21 +13,26 @@ const Projects = () => {
 
   useGSAP(
     () => {
-      const cards = gsap.utils.toArray<HTMLDivElement>(".project-card");
-      cards.forEach((card, i) => {
-        gsap.to(card, {
-          scale: 0.8 + 0.025 * i,
-          transformOrigin: "top center",
-          scrollTrigger: {
-            trigger: card,
-            start: "top " + (60 + 20 * i),
-            end: "bottom 550",
-            endTrigger: ".project-wrapper",
-            scrub: 3,
-            pin: card,
-            pinSpacing: false,
-          },
-        });
+      // gsap.to("#projects", {
+      //   scrollTrigger: {
+      //     trigger: "#projects",
+      //     start: "top 60",
+      //     end: "bottom 550",
+      //     endTrigger: ".project-wrapper",
+      //     pin: "#projects",
+      //     pinSpacing: false,
+      //   },
+      // });
+      gsap.to("#projects", {
+        opacity: 0.5,
+        // color: "#7bf1a8",
+        scrollTrigger: {
+          trigger: ".project-wrapper",
+          start: "top 200",
+          end: "top 125",
+          endTrigger: ".project-wrapper",
+          scrub: true,
+        },
       });
     },
     { scope: container }
@@ -35,17 +40,17 @@ const Projects = () => {
   return (
     <section
       ref={container}
-      className="con-px mt-10 mb-26 text-[#fffae2] sm:mt-35 md:!px-[10%]"
+      className="con-px mt-26 mb-26 text-[#fffae2] sm:mt-35 md:!px-[10%]"
     >
       <h1
         id="projects"
-        className="text-center text-3xl mb-15 uppercase sm:text-4xl"
+        className="text-center font-teko font-bold mb-15 uppercase text-[75px] sticky top-[60px] sm:text-[100px] md:text-[120px] lg:text-[140px]"
       >
         Projects
       </h1>
       <section className="project-wrapper relative flex flex-col gap-10">
         {projects.map((project, index) => (
-          <ProjectCard project={project} key={index} index={index+1} />
+          <ProjectCard project={project} key={index} index={index + 1} />
         ))}
       </section>
     </section>

@@ -5,6 +5,8 @@
   --font-syne: var(--syne);
   --font-spaceMono: var(--font-space-mono);
   --font-audiowide: var(--font-audiowide);
+  --font-mona: var(--font-mona);
+  --font-teko: var(--font-teko);
 }
 
 @layer base {
