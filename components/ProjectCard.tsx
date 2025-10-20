@@ -27,9 +27,9 @@ const ProjectCard = ({
 
   return (
     <div
-      className={`rounded-[30px] overflow-hidden border-[1.5] bg-black mx-auto lg:h-[500px] lg:grid ${
+      className={`rounded-[30px] overflow-hidden border-[1.5] bg-[#0e1015] mx-auto lg:h-[500px] lg:grid ${
         isEven ? "lg:grid-cols-[45%_55%]" : "lg:grid-cols-[55%_45%]"
-      } group project-card sticky top-[128px] sm:top-[152px] md:top-[170px] lg:top-[185px]`}
+      } group project-card sticky top-40 sm:top-45 md:top-[200px]`}
     >
       <div className={isEven ? "" : "order-2"}>
         <div
@@ -37,9 +37,9 @@ const ProjectCard = ({
             isEven ? "" : "xl:pl-20"
           }`}
         >
-          <h2 className="pt-3 uppercase font-bold text-lg px-5 font-audiowide sm:text-xl sm:text-left sm:px-0 sm:py-0 sm:mb-0 md:text-2xl lg:text-3xl">
+          <h3 className="pt-3 px-5 sm:text-left sm:px-0 sm:py-0 sm:mb-0">
             {title}
-          </h2>
+          </h3>
           <div
             className={`flex items-center mt-4 mb-4 gap-5 font-semibold px-5 sm:px-0 sm:my-0 lg:gap-7 lg:w-full ${
               isEven ? "" : "lg:justify-end"

@@ -7,24 +7,60 @@
   --font-audiowide: var(--font-audiowide);
   --font-mona: var(--font-mona);
   --font-teko: var(--font-teko);
+  --color-background: #0e1015;
+  --color-off-white: #f5f5f5;
+  --color-raymond-green: #00ffa3;
 }
 
 @layer base {
   body {
-    background: #000;
+    background: var(--color-background);
     font-family: var(--font-syne);
-    color: #f5f5f5;
+    color: var(--color-off-white);
   }
   h1 {
     @apply font-audiowide;
   }
-  html{
+  h2 {
+    @apply text-center font-audiowide font-bold uppercase text-[42px] lg:text-6xl;
+  }
+  h3 {
+    @apply uppercase font-bold text-lg font-audiowide sm:text-xl md:text-2xl lg:text-3xl;
+  }
+  html {
     scroll-behavior: smooth;
+  }
+  p {
+    @apply sm:text-lg;
+  }
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px #262626 inset !important;
+
+  }
+  input:-webkit-autofill {
+    -webkit-text-fill-color: white;
+    caret-color: white;
   }
 }
 @layer components {
-  .btn { 
+  .btn {
     @apply p-1 px-3.5 rounded-full cursor-pointer font-audiowide text-[13px] sm:text-sm md:text-[15px];
+  }
+  .form-field label {
+    @apply font-medium text-[15px] opacity-70;
+  }
+  .form-field input,
+  .form-field textarea {
+    @apply bg-[#262626] block mt-2 w-full border border-[#6d6d6d] px-4 py-3 focus:border-[#00FFA3] focus:outline-none;
+  }
+  .form-field input {
+    @apply rounded-full;
+  }
+  .form-field textarea {
+    @apply rounded-3xl;
   }
 }
 @layer utilities {
@@ -34,10 +70,7 @@
   .abs-x-center {
     @apply left-1/2 -translate-x-1/2;
   }
-  .abs-y-center{
-    @apply lg:top-1/2 lg:-translate-y-1/2;  
-  }
-  .shadow{
-    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+  .abs-y-center {
+    @apply lg:top-1/2 lg:-translate-y-1/2;
   }
 }

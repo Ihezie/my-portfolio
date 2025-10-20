@@ -79,4 +79,43 @@ const projects = [
   },
 ];
 
-export { socials, navLinks, projects };
+const skills = [
+  {
+    tech: "Javascript",
+    logo: "/tech-logos/javascript.svg",
+  },
+  {
+    tech: "Typescript",
+    logo: "/tech-logos/typescript.svg",
+  },
+  {
+    tech: "React",
+    logo: "/tech-logos/react.svg",
+  },
+  {
+    tech: "Next.js",
+    logo: "/tech-logos/nextjs.svg",
+  },
+  {
+    tech: "Sanity",
+    logo: "/tech-logos/sanity.svg",
+  },
+  {
+    tech: "Tailwind CSS",
+    logo: "/tech-logos/tailwind.svg",
+  },
+  {
+    tech: "Motion",
+    logo: "/tech-logos/motion.svg",
+  },
+  {
+    tech: "GSAP",
+    logo: "/tech-logos/gsap.svg",
+  },
+  {
+    tech: "Three.js",
+    logo: "/tech-logos/threejs.svg",
+  },
+];
+
+export { socials, navLinks, projects, skills };
