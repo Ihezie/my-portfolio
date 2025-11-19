@@ -14,7 +14,7 @@ function useResponsive(mediaQuery: string) {
     media.addEventListener("change", handleResize);
 
     return () => {
-      window.removeEventListener("resize", handleResize);
+      media.removeEventListener("change", handleResize);
     };
   }, []);
 

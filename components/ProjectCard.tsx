@@ -29,7 +29,7 @@ const ProjectCard = ({
     <div
       className={`rounded-[30px] overflow-hidden border-[1.5] bg-[#0e1015] mx-auto lg:h-[500px] lg:grid ${
         isEven ? "lg:grid-cols-[45%_55%]" : "lg:grid-cols-[55%_45%]"
-      } group project-card sticky top-40 sm:top-45 md:top-[200px]`}
+      } group project-card sticky top-[159px] md:top-[197px] lg:top-[194px]`}
     >
       <div className={isEven ? "" : "order-2"}>
         <div

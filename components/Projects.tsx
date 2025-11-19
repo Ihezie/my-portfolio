@@ -14,12 +14,12 @@ const Projects = () => {
   return (
     <section
       ref={container}
-      className="con-px mt-26 mb-26 text-[#fffae2] sm:mt-35 md:!px-[10%]"
+      className="section-px mt-26 text-[#fffae2] sm:mt-35"
     >
-      <h2 id="projects" className="sticky top-[60px] mb-9 md:top-[90px]">
+      <h2 id="projects" className="sticky top-[60px] mb-9 md:top-[90px] md:mb-11">
         Projects
       </h2>
-      <section className="project-wrapper relative flex flex-col gap-10">
+      <section className="project-wrapper relative flex flex-col gap-18 lg:gap-25">
         {projects.map((project, index) => (
           <ProjectCard project={project} key={index} index={index + 1} />
         ))}

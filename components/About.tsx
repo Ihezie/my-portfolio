@@ -2,7 +2,7 @@ import { skills } from "@/constants";
 import Image from "next/image";
 const About = () => {
   return (
-    <section className="mb-26 con-px md:!px-[10%]">
+    <section className="mt-26 section-px">
       <h2 id="about" className="mb-5 lg:mb-15">
         About
       </h2>
@@ -38,8 +38,8 @@ const About = () => {
               dignissimos.
             </p>
           </div>
-          <h3 className="mt-5 lg:mt-1">Skills</h3>
-          <div className="flex flex-wrap gap-3 mt-3 overflow-hidden items-center mb-20">
+          <h3 className="mt-6">Skills</h3>
+          <div className="flex flex-wrap gap-3 mt-6 overflow-hidden items-center mb-20">
             {skills.map(({ tech, logo }) => {
               const darkTheme = ["Motion", "React", "GSAP"];
               return (
@@ -66,6 +66,7 @@ const About = () => {
         </div>
       </div>
     </section>
+    // Add a favourite stuff section
   );
 };
 export default About;

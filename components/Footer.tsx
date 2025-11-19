@@ -4,7 +4,7 @@ import LordIcon from "./LordIcon";
 const Footer = () => {
   const year = new Date().getFullYear();
   return (
-    <footer className="py-6 border-off-white border-t-2 gap-3 con-px font-semibold text-center flex justify-between items-center">
+    <footer className="py-6 border-off-white border-t-2 gap-3 nav-footer-px font-semibold text-center flex justify-between items-center">
       <p className="text-sm text-left sm:text-base">
         © {year}{" "}
         <span className="text-green-300 underline">Raymond Ogbuehi</span>. All

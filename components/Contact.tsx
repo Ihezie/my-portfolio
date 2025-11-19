@@ -1,11 +1,13 @@
 import { RocketIcon } from "lucide-react";
 import { useForm, ValidationError } from "@formspree/react";
+import Image from "next/image";
 
 const Contact = () => {
   const [formState, handleSubmit] = useForm("xdkwjknd");
 
   return (
-    <section className="con-px md:!px-[10%] mb-30 max-w-[1028px] mx-auto">
+    <section className="section-px mt-26 mb-30 max-w-[1028px] mx-auto">
+      
       <h2 id="contact" className="mb-8 sm:mb-10 lg:mb-15">
         Contact
       </h2>

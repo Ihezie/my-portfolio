@@ -1,15 +1,45 @@
 import { useFrame } from "@react-three/fiber";
-import CameraControls from "./CameraControls";
 import { useRef, useMemo } from "react";
 import { Mesh } from "three";
-import { Line } from "@react-three/drei";
 import * as THREE from "three";
 import useResponsive from "@/hooks/useResponsive";
-import { Text } from "@react-three/drei";
+import { Svg, Float } from "@react-three/drei";
 
 type Vector = [number, number, number];
 
-const OrbitAnimation = ({ moonData }: { moonData: Array<any> }) => {
+const moonData: {
+  rotation: Vector;
+  svgSrc: string;
+  lgPosition: Vector;
+}[] = [
+  {
+    rotation: [0, 0, 0],
+    svgSrc: "/orbit-animation-icons/microchip.svg",
+    lgPosition: [0, 2.67, 0],
+  },
+  {
+    rotation: [0, 1.256, 0],
+    svgSrc: "/orbit-animation-icons/terminal.svg",
+    lgPosition: [-1.2, 2.6, 0],
+  },
+  {
+    rotation: [0, 2.512, 0],
+    svgSrc: "/orbit-animation-icons/code.svg",
+    lgPosition: [1.2, 2.6, 0],
+  },
+  {
+    rotation: [0, 3.768, 0],
+    svgSrc: "/orbit-animation-icons/database.svg",
+    lgPosition: [-2.4, 2.45, 0],
+  },
+  {
+    rotation: [0, 5.024, 0],
+    svgSrc: "/orbit-animation-icons/binary.svg",
+    lgPosition: [2.4, 2.4, 0],
+  },
+];
+
+const OrbitAnimation = () => {
   const position: Vector = [0, -1.1, 0];
   let scale: Vector = [0.9, 0.9, 0.9];
   let sphereScale: Vector = [1, 1, 1];
@@ -26,16 +56,32 @@ const OrbitAnimation = ({ moonData }: { moonData: Array<any> }) => {
     sphereScale = [5.5, 2, 4];
     rotation[2] = 0;
   }
+  const groupRef = useRef<Mesh>(null!);
+
+  useFrame((state, delta) => {
+    if (!isLarge) {
+      groupRef.current.rotation.y += 0.25 * delta;
+    } else {
+      groupRef.current.rotation.y = 0;
+    }
+  });
 
   return (
     <>
       <group scale={scale} position={position} rotation={rotation}>
         <group scale={sphereScale}>
-          <PointsSphere />
+          <Planet />
         </group>
-        {moonData.map(({ position, text }) => (
-          <Moon key={text} position={position} color={"#e36507"} text={text} />
-        ))}
+        <group ref={groupRef}>
+          {moonData.map((moon, index) => (
+            <Moon
+              key={index}
+              rotation={moon.rotation}
+              svgSrc={moon.svgSrc}
+              lgPosition={moon.lgPosition}
+            />
+          ))}
+        </group>
       </group>
     </>
   );
@@ -43,83 +89,55 @@ const OrbitAnimation = ({ moonData }: { moonData: Array<any> }) => {
 export default OrbitAnimation;
 
 const Moon = ({
-  position,
-  color,
-  text,
+  rotation,
+  svgSrc,
+  lgPosition,
 }: {
-  position: [number, number, number];
-  color: string;
-  text: string;
+  rotation: Vector;
+  svgSrc: string;
+  lgPosition: Vector;
 }) => {
-  const groupRef = useRef<Mesh>(null!);
-  const objectRef = useRef<Mesh>(null!);
-  const points: Array<THREE.Vector3> = [];
-  const segments = 64;
-  for (let i = 0; i <= segments; i++) {
-    const angle = ((i / segments) * Math.PI) / 5;
-    points.push(
-      new THREE.Vector3(Math.cos(angle) * 1.5, 0, Math.sin(angle) * 1.5)
-    );
-  }
-
-  useFrame(() => {
-    groupRef.current.rotation.y += 0.007;
-  });
-
   const isLarge = useResponsive("width >= 1024px");
+  const isXLarge = useResponsive("width >= 1280px");
 
-  let lineWidth = 1.5;
-  let opacity = 0.3;
-  let fontSize = 0.07;
-  let moonScale = 0.03;
+  let scale = 0.01;
+  let position: Vector = [1.4, 0, 0];
   if (isLarge) {
-    lineWidth = 2;
-    opacity = 0.5;
-    fontSize = 0.05;
-    moonScale = 0.02;
+    scale = 0.009
+    position = [...lgPosition];
+    rotation = [0, 0, 0];
+  }
+  if (isXLarge) {
+    position[0] *= 1.2;
   }
 
   return (
-    <group ref={groupRef} rotation={position}>
-      <Line
-        points={points}
-        color={"white"}
-        lineWidth={lineWidth}
-        transparent
-        opacity={opacity}
-      />
-      <mesh ref={objectRef} scale={moonScale} position={[1.5, 0, 0]}>
-        <meshStandardMaterial
-          color={color}
-          emissive={color}
-          emissiveIntensity={2}
-        />
-        <sphereGeometry />
-      </mesh>
-      <Text
-        font="/fonts/Audiowide-Regular.ttf"
-        position={[1.5, -0.04, 0.1]}
-        fontSize={fontSize}
-        color="white"
-        anchorX="right"
-        anchorY="top"
-        rotation={[0, 1.57, 0]}
+    <group rotation={rotation}>
+      <Float
+        speed={1.2} // overall animation speed
+        rotationIntensity={2} // how much it rotates
+        floatIntensity={0.4} // how much it moves up/down
       >
-        {text.toUpperCase()}
-      </Text>
+        <Svg
+          rotation={isLarge ? [0, 0, 0] : [0, Math.PI / 2, 0]}
+          src={svgSrc}
+          position={position}
+          scale={scale}
+        />
+      </Float>
     </group>
   );
 };
 
-function PointsSphere() {
-  const sunRef = useRef<THREE.Points>(null!);
+function Planet() {
+  const planetRef = useRef<THREE.Points>(null!);
   const isLarge = useResponsive("width >= 1024px");
 
-  useFrame(() => {
+  useFrame((state, delta) => {
     if (isLarge) {
-      sunRef.current.rotation.x -= 0.001;
+      planetRef.current.rotation.x -= 0.05 * delta;
     } else {
-      sunRef.current.rotation.y += 0.002;
+      planetRef.current.rotation.y += 0.07 * delta;
     }
   });
 
@@ -159,7 +177,7 @@ function PointsSphere() {
   }, [radius, numPoints]);
 
   return (
-    <points ref={sunRef}>
+    <points ref={planetRef}>
       <bufferGeometry>
         <bufferAttribute
           args={[positions, 3]}
