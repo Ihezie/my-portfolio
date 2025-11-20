@@ -11,7 +11,7 @@ const Contact = () => {
       <h2 id="contact" className="mb-8 sm:mb-10 lg:mb-15">
         Contact
       </h2>
-      <div className="font-semibold text-center justify-center text-sm sm:flex sm:items-center sm:gap-5 sm:font-bold">
+      <div className="font-semibold text-white text-center justify-center text-sm sm:flex sm:items-center sm:gap-5 sm:font-bold">
         <h4 className="uppercase ">Don't be shy. Get in touch! </h4>
         <div className="border-l h-4 border-white hidden sm:block"></div>
         <h4 className="uppercase mt-1 sm:mt-0">
@@ -21,7 +21,7 @@ const Contact = () => {
           or fill out the form.
         </h4>
       </div>
-      <section className="relative mt-6">
+      <section className="relative mt-6 text-white">
         <form
           onSubmit={handleSubmit}
           className="space-y-5 border border-[#fff] px-3 py-5 rounded-[22px] sm:rounded-[28px] sm:p-5 w-[97%] lg:w-[98%] bg-background"

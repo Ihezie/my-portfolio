@@ -10,7 +10,6 @@
   --color-background: #0e1015;
   --color-off-white: #f5f5f5;
   --color-raymond-green: #00ffa3;
-  --breakpoint-xs: 25rem;
 }
 
 @layer base {
@@ -23,7 +22,7 @@
     @apply font-audiowide;
   }
   h2 {
-    @apply text-center font-audiowide font-bold uppercase text-[42px] lg:text-6xl;
+    @apply text-center text-white font-audiowide font-bold uppercase text-[42px] lg:text-6xl;
   }
   h3 {
     @apply uppercase font-bold text-xl font-audiowide sm:text-xl md:text-2xl lg:text-3xl;
@@ -32,7 +31,7 @@
     scroll-behavior: smooth;
   }
   p {
-    @apply sm:text-lg;
+    @apply text-white sm:text-lg;
   }
   input:-webkit-autofill,
   input:-webkit-autofill:hover,
@@ -75,5 +74,20 @@
   }
   .abs-y-center {
     @apply lg:top-1/2 lg:-translate-y-1/2;
+  }
+  .cursor {
+    @apply text-white;
+  }
+  /* .Typewriter__cursor {
+    animation: disappear 0.1s;
+    animation-delay: 5s;
+  } */
+}
+@keyframes disappear {
+  0% {
+    opacity: 1 !;
+  }
+  100% {
+    opacity: 0 !important;
   }
 }
