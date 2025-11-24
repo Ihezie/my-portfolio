@@ -5,6 +5,8 @@ import LordIcon from "./LordIcon";
 import linkIcon from "../public/animated-icons/wired-outline-11-link-unlink-hover-bounce.json";
 import GithubIcon from "../public/animated-icons/wired-outline-2572-logo-github-hover-pinch.json";
 import useResponsive from "@/hooks/useResponsive";
+import { motion } from "motion/react";
+import { containerVariants } from "@/motion-variants";
 
 interface Project {
   title: string;
@@ -31,16 +33,21 @@ const ProjectCard = ({
         isEven ? "lg:grid-cols-[45%_55%]" : "lg:grid-cols-[55%_45%]"
       } group project-card sticky top-[159px] md:top-[197px] lg:top-[194px]`}
     >
-      <div className={isEven ? "" : "order-2"}>
+      <motion.div
+        variants={containerVariants}
+        initial="hide"
+        whileInView="show"
+        className={isEven ? "" : "order-2"}
+      >
         <div
           className={`sm:flex sm:px-6 sm:justify-between sm:items-center sm:mb-8 sm:pt-3 lg:flex lg:items-start lg:flex-col-reverse lg:border-0 lg:gap-23 lg:px-8 lg:mb-3 lg:pt-7 xl:gap-32 ${
             isEven ? "" : "xl:pl-20"
           }`}
         >
-          <h3 className="pt-3 px-5 sm:text-left sm:px-0 sm:py-0 sm:mb-0">
+          <motion.h3 className="pt-3 px-5 sm:text-left sm:px-0 sm:py-0 sm:mb-0">
             {title}
-          </h3>
-          <div
+          </motion.h3>
+          <motion.div
             className={`flex items-center mt-4 mb-4 gap-5 font-semibold px-5 sm:px-0 sm:my-0 lg:gap-7 lg:w-full ${
               isEven ? "" : "lg:justify-end"
             } `}
@@ -51,7 +58,7 @@ const ProjectCard = ({
             <a href={liveLink} className="h-10">
               <LordIcon icon={linkIcon} size={isLarge ? 50 : 40} />
             </a>
-          </div>
+          </motion.div>
         </div>
         <div className={`px-5 sm:px-6 lg:px-8 ${isEven ? "" : "xl:pl-20"} `}>
           <p>{description}</p>
@@ -61,7 +68,7 @@ const ProjectCard = ({
             ))}
           </ul>
         </div>
-      </div>
+      </motion.div>
       <div
         className={`overflow-hidden mt-6 relative sm:mt-8 ${
           isEven ? "lg:order-1" : ""

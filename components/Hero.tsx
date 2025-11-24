@@ -7,30 +7,10 @@ import useResponsive from "@/hooks/useResponsive";
 import { Stars } from "@react-three/drei";
 import { ArrowDown } from "lucide-react";
 import { LoaderScreen } from "./LoaderScreen";
-import { motion, stagger } from "motion/react";
+import { motion } from "motion/react";
 import { useState } from "react";
 import Typewriter from "typewriter-effect";
-
-const containerVariants = {
-  show: {
-    opacity: 1,
-    transition: { delayChildren: stagger(0.4), when: "beforeChildren", duration: 4.3 },
-  },
-  hide: {
-    opacity: 0,
-  },
-};
-const childVariants = {
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.8},
-  },
-  hide: {
-    opacity: 0,
-    y: 10,
-  },
-};
+import { heroVariants, childVariants } from "../motion-variants";
 
 const Hero = () => {
   const isLarge = useResponsive("width >= 1024px");
@@ -74,7 +54,7 @@ const Hero = () => {
           <motion.div
             initial="hide"
             animate="show"
-            variants={containerVariants}
+            variants={heroVariants}
           >
             <motion.p
               variants={childVariants}

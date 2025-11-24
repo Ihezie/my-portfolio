@@ -10,6 +10,7 @@
   --color-background: #0e1015;
   --color-off-white: #f5f5f5;
   --color-raymond-green: #00ffa3;
+  --animate-float: float 3s linear infinite;
 }
 
 @layer base {
@@ -78,10 +79,33 @@
   .cursor {
     @apply text-white;
   }
-  /* .Typewriter__cursor {
-    animation: disappear 0.1s;
-    animation-delay: 5s;
-  } */
+  .img-soft-glow {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
+  }
+
+  .img-strong-pop {
+    box-shadow:
+      0 8px 20px rgba(0, 0, 0, 0.7),
+      0 0 8px rgba(255, 255, 255, 0.08);
+  }
+
+  .img-edge-glow {
+    box-shadow:
+      0 0 25px rgba(255, 255, 255, 0.20),
+      0 0 50px rgba(255, 255, 255, 0.05);
+  }
+
+  .img-cinematic {
+    box-shadow:
+      0 15px 40px rgba(0, 0, 0, 0.8),
+      0 0 12px rgba(255, 255, 255, 0.12);
+  }
+
+  .img-neon {
+    box-shadow:
+      0 0 25px rgba(0,153,255,0.35),
+      0 0 60px rgba(0,153,255,0.15);
+  }
 }
 @keyframes disappear {
   0% {
@@ -89,5 +113,20 @@
   }
   100% {
     opacity: 0 !important;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  33.33% {
+    transform: translateY(5px);
+  }
+  66.66% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0px);
   }
 }
