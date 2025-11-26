@@ -9,6 +9,11 @@ import { useGSAP } from "@gsap/react";
 gsap.registerPlugin(useGSAP); // register the hook to avoid React version discrepancies
 
 const Navbar = () => {
+  // function isContentScrolledToBottom() {
+  //   const rest = window.scrollHeight - element.scrollTop;
+  //   return Math.abs(element.clientHeight - rest) < 1;
+  // }
+
   const [isVisible, setIsVisible] = useState(true);
   const [prevScrollPosition, setPreviousScrollPosition] = useState(0);
   const handleScroll = () => {

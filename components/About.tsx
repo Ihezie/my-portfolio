@@ -39,24 +39,27 @@ export const viewPortOptions = {
 
 const About = () => {
   useGSAP(() => {
-    let split = SplitText.create(".split-text", { type: "words" });
-
-    gsap.from(split.words, {
-      scrollTrigger: ".split-text",
-      duration: 1,
-      y: 10,
-      autoAlpha: 0,
-      stagger: 0.03,
+    let paragraphs = gsap.utils.toArray<HTMLParagraphElement>(".split-text");
+    paragraphs.forEach((p) => {
+      let split = SplitText.create(p, { type: "words" });
+      gsap.from(split.words, {
+        scrollTrigger: p,
+        duration: 1,
+        y: 10,
+        autoAlpha: 0,
+        stagger: 0.03,
+      });
     });
   });
 
   return (
     <motion.section
+      id="about"
       initial={{
         opacity: 0,
       }}
       viewport={{
-        amount: 0.3,
+        amount: 0.2,
         once: true,
       }}
       whileInView={{
@@ -64,9 +67,7 @@ const About = () => {
       }}
       className="mt-26 section-px"
     >
-      <h2 id="about" className="mb-8 sm:mb-13 lg:mb-15">
-        About
-      </h2>
+      <h2 className="mb-8 sm:mb-13 lg:mb-15">About</h2>
       <div className="lg:grid lg:grid-cols-[55%_40%] xl:grid-cols-[62%_33%] lg:gap-[5%] lg:items-start">
         <div className="relative rounded-3xl mb-14 md:order-2 self-center">
           <motion.div
@@ -81,24 +82,23 @@ const About = () => {
               rotate: -3,
             }}
             transition={{
-              duration: 0.4,
+              type: "tween",
             }}
           >
             <Image
               className="rounded-2xl
-             max-h-[450px] object-cover w-[85%] max-w-[530px] md:w-full lg:max-h-none mx-auto origin-bottom md:rounded-3xl"
-              src="/personal-images/raymond-3.jpeg"
+             max-h-[450px] object-cover w-[85%] max-w-[530px] translate-x-[5%] md:w-full lg:max-h-none origin-bottom md:rounded-3xl sm:translate-x-0 sm:mx-auto"
+              src="/personal-images/raymond-4.jpeg"
               width={3024}
               height={4032}
               alt="raymond"
             />
           </motion.div>
-
           {Array.from({ length: 3 }).map((_, i) => (
             <motion.div
               key={i}
               initial={{
-                opacity: 0,
+                filter: "blur(0px)",
                 rotate: 0,
               }}
               viewport={{
@@ -114,9 +114,9 @@ const About = () => {
                 zIndex: -(i + 1),
               }}
               transition={{
-                duration: 0.4,
+                type: "tween",
               }}
-              className="absolute border border-white h-full top-0 w-[85%] max-w-[530px] rounded-2xl -z-10  origin-bottom bg-background abs-x-center md:w-full"
+              className="absolute border border-white h-full top-0 w-[85%] max-w-[530px] rounded-2xl -z-10  origin-bottom bg-background translate-x-[5%] sm:-translate-x-1/2 sm:left-1/2 md:w-full"
             ></motion.div>
           ))}
         </div>
@@ -152,16 +152,16 @@ const About = () => {
             initial="hide"
             whileInView="show"
             viewport={{
-              amount: "all",
+              amount: 0.5,
               once: true,
             }}
           >
-            <motion.h3 variants={childVariants} className="mt-6">
+            <motion.h3 variants={childVariants} className="mt-6 text-white">
               My Tools
             </motion.h3>
             <div className="flex flex-wrap gap-3 mt-6 items-center mb-20">
               {skills.map(({ tech, logo }) => {
-                const darkTheme = ["Motion", "React", "GSAP"];
+                const darkTheme = ["Motion", "React", "GSAP", "Figma", "Javascript"];
                 return (
                   <motion.div
                     variants={childVariants}
@@ -181,7 +181,7 @@ const About = () => {
                       alt={tech}
                       width={20}
                       height={20}
-                      className="mr-2"
+                      className="mr-2" 
                     />
                     {tech}
                   </motion.div>

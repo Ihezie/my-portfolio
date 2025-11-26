@@ -28,7 +28,7 @@ const Hero = () => {
 
   return (
     <section
-      id="hero"
+      id="home"
       className="text-white relative flex flex-col h-[95vh] sm:min-h-[700px] lg:h-screen"
     >
       {!isVisible && (

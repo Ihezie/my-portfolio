@@ -29,7 +29,7 @@ const ProjectCard = ({
 
   return (
     <div
-      className={`rounded-[30px] overflow-hidden border-[1.5] bg-[#0e1015] mx-auto lg:h-[500px] lg:grid ${
+      className={`rounded-[30px] relative overflow-hidden border-[1.5] bg-[#0e1015] mx-auto h-[60vh] min-h-[520px] max-h-[570px] sm:h-[50vh] sm:min-h-[590px] sm:max-h-[620px] lg:min-h-auto lg:max-h-none lg:h-[500px] lg:grid ${
         isEven ? "lg:grid-cols-[45%_55%]" : "lg:grid-cols-[55%_45%]"
       } group project-card sticky top-[159px] md:top-[197px] lg:top-[194px]`}
     >
@@ -52,10 +52,10 @@ const ProjectCard = ({
               isEven ? "" : "lg:justify-end"
             } `}
           >
-            <a href={githubLink} className="h-10">
+            <a target="_blank" href={githubLink} className="h-10">
               <LordIcon icon={GithubIcon} size={isLarge ? 50 : 40} />
             </a>
-            <a href={liveLink} className="h-10">
+            <a target="_blank" href={liveLink} className="h-10">
               <LordIcon icon={linkIcon} size={isLarge ? 50 : 40} />
             </a>
           </motion.div>
@@ -70,7 +70,7 @@ const ProjectCard = ({
         </div>
       </motion.div>
       <div
-        className={`overflow-hidden mt-6 relative sm:mt-8 ${
+        className={`overflow-hidden absolute bottom-0 lg:relative ${
           isEven ? "lg:order-1" : ""
         } lg:mt-0 lg:self-end`}
       >

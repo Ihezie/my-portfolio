@@ -33,7 +33,7 @@ export const childVariants = {
   },
   hide: {
     opacity: 0,
-    y: 10,
+    y: 20,
   },
 };
 export const viewPortOptions = {

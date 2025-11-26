@@ -2,12 +2,13 @@
 
 import ProjectCard from "./ProjectCard";
 import { projects } from "@/constants";
-import { containerVariants, childVariants, viewPortOptions } from "../motion-variants";
+import { containerVariants, childVariants} from "../motion-variants";
 import { motion } from "motion/react";
 
 const Projects = () => {
   return (
     <motion.section
+      id="projects"
       initial="hide"
       whileInView="show"
       variants={containerVariants}

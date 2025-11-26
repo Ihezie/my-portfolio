@@ -26,57 +26,84 @@ const projects = [
   {
     title: "Unripe Plantain",
     description:
-      "Portfolio website for Michael Odunsi, an experienced UI/UX designer crafting unique, user-friendly products and web experiences for Web3 founders and projects.",
+      "A women's lifestyle blog inspired by my sister, offering insights, ideas, and everyday inspiration—plus the ability to comment, like, and save your favourite posts.",
     image: "/project-screenshots/unripe-plantain.png",
-    techStack: ["Next.js", "Tailwind", "Framer", "Sanity CMS"],
+    techStack: ["TypeScript", "Next.js", "React", "Tailwind CSS", "Sanity"],
+    githubLink: "https://github.com/Ihezie/unripe-plantain",
+    liveLink: "https://unripe-plantain.vercel.app/",
+  },
+  {
+    title: "FlickMart",
+    description:
+      "FlickMart is a modern e-commerce platform that allows users to buy and sell products in a secure, user-friendly marketplace, simplifying online transactions for both buyers and sellers.",
+    image: "/project-screenshots/flickmart.png",
+    techStack: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "React Query",
+      "Tailwind CSS",
+      "Zod",
+      "Convex",
+    ],
     githubLink: "",
-    liveLink: "",
+    liveLink: "https://flickmart.app/",
+  },
+  {
+    title: "Where in the world?",
+    description:
+      "A country information website featuring search, region-based filtering, and dark mode support. Users can browse country cards with key details and view dedicated pages for each country containing expanded information.",
+    image: "/project-screenshots/where-in-the-world.png",
+    techStack: ["React", "React Router", "Tailwind CSS", "Axios"],
+    githubLink:
+      "https://github.com/Ihezie/rest-countries-api-with-color-theme-switcher.git",
+    liveLink: "https://extraordinary-bubblegum-372d49.netlify.app/",
   },
   {
     title: "Scoot",
     description:
-      "Portfolio website for Michael Odunsi, an experienced UI/UX designer crafting unique, user-friendly products and web experiences for Web3 founders and projects.",
+      "A multi-page website for Scoot, a fictional scooter transportation company, designed to showcase its services and brand identity through engaging content and a user-friendly interface.",
     image: "/project-screenshots/scoot.png",
-    techStack: ["Next.js", "Tailwind", "Framer", "Sanity CMS"],
-    githubLink: "",
-    liveLink: "",
+    techStack: ["React", "Tailwind CSS", "Framer Motion", "React Router"],
+    githubLink: "https://github.com/Ihezie/Scoot-Multi-Page-Website.git",
+    liveLink: "https://scoot-multi-page-site.netlify.app/",
   },
   {
     title: "Bookmark Landing Page",
     description:
-      "Portfolio website for Michael Odunsi, an experienced UI/UX designer crafting unique, user-friendly products and web experiences for Web3 founders and projects.",
+      "A landing page for a fictional bookmark manager extension. This was my first time working with an animation library (Framer Motion).",
     image: "/project-screenshots/bookmark-landing-page.png",
-    techStack: ["Next.js", "Tailwind", "Framer", "Sanity CMS"],
-    githubLink: "",
-    liveLink: "",
+    techStack: ["React", "Tailwind CSS", "Framer Motion"],
+    githubLink: "https://github.com/Ihezie/bookmark-landing-page.git",
+    liveLink: "https://musical-moxie-bab6e3.netlify.app/",
   },
   {
     title: "Multi Step Form",
     description:
-      "Portfolio website for Michael Odunsi, an experienced UI/UX designer crafting unique, user-friendly products and web experiences for Web3 founders and projects.",
+      "A multi-step registration form for a fictional gaming site’s subscription service, guiding users through plan selection and payment details in a structured flow with validation at each step.",
     image: "/project-screenshots/multi-step-form.png",
-    techStack: ["Next.js", "Tailwind", "Framer", "Sanity CMS"],
-    githubLink: "",
-    liveLink: "",
+    techStack: ["React", "Tailwind CSS", "Framer Motion", "React Hook Form"],
+    githubLink: "https://github.com/Ihezie/multi-step-form.git",
+    liveLink: "https://candid-empanada-2ade87.netlify.app/",
   },
   {
-    title: "Rock Paper Scissors",
+    title: "Rock Paper Scissors Lizard Spock",
     description:
-      "Portfolio website for Michael Odunsi, an experienced UI/UX designer crafting unique, user-friendly products and web experiences for Web3 founders and projects.",
+      "A web-based version of Rock-Paper-Scissors that expands the original game with two additional moves and a more detailed set of interactions.",
     image: "/project-screenshots/rock-paper-scissors.png",
-    techStack: ["Next.js", "Tailwind", "Framer", "Sanity CMS"],
-    githubLink: "",
-    liveLink: "",
+    techStack: ["React", "Tailwind"],
+    githubLink: "https://github.com/Ihezie/multi-step-form.git",
+    liveLink: "https://candid-empanada-2ade87.netlify.app/",
   },
-  {
-    title: "Tic Tac Toe",
-    description:
-      "Portfolio website for Michael Odunsi, an experienced UI/UX designer crafting unique, user-friendly products and web experiences for Web3 founders and projects.",
-    image: "/project-screenshots/tic-tac-toe.png",
-    techStack: ["Next.js", "Tailwind", "Framer", "Sanity CMS"],
-    githubLink: "",
-    liveLink: "",
-  },
+  // {
+  //   title: "Tic Tac Toe",
+  //   description:
+  //     "kfj klsa fs faslkf dsf lsl kas  ksld sf d sdf s;l asl;kf jskldfjsdklfj kdfj sdkf dsjfk dkf dk fk  dkf kdfjdkfjdk fkd k kfdjfkdfjkdf k dfjdk fkdj d dkfj dk dkfjdkfdjfkdfj dkf dkf djkf k",
+  //   image: "/project-screenshots/tic-tac-toe.png",
+  //   techStack: ["Next.js", "Tailwind", "Framer", "Sanity CMS"],
+  //   githubLink: "",
+  //   liveLink: "",
+  // },
 ];
 
 const skills = [
@@ -103,6 +130,10 @@ const skills = [
   {
     tech: "Tailwind CSS",
     logo: "/tech-logos/tailwind.svg",
+  },
+  {
+    tech: "Figma",
+    logo: "/tech-logos/figma.svg",
   },
   {
     tech: "Motion",

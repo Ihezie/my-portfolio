@@ -9,6 +9,8 @@ import {
   Teko,
 } from "next/font/google";
 import Navbar from "@/components/Navbar";
+import { Toaster } from "@/components/ui/sonner";
+import { relative } from "path";
 
 export const metadata: Metadata = {
   title: "Raymond Ogbuehi - Frontend Engineer",
@@ -53,6 +55,18 @@ export default function RootLayout({
       >
         <Navbar />
         {children}
+        <Toaster
+          toastOptions={{
+            unstyled: true,
+            classNames: {
+              toast:
+                "bg-white font-syne font-medium flex items-center gap-2 px-4 py-3 justify-center rounded-full font-base shadow-lg sm:!absolute sm:!-translate-x-1/2 sm:!left-1/2 !w-max mx-auto",
+              icon: "text-red-500",
+            },
+          }}
+          position="top-center"
+          mobileOffset={{ left: 0 }}
+        />
       </body>
     </html>
   );
