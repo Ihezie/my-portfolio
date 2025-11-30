@@ -60,8 +60,7 @@ const Hero = () => {
               variants={childVariants}
               className="text-center mt-7 w-4/5 mx-auto font-medium lg:text-lg max-w-[750px]"
             >
-              I build web experiences that make you say,{" "}
-              <span className="italic">"Hey, this isn't utter garbage!"</span>
+             Your friendly neighborhood frontend developer.
             </motion.p>
             <motion.a
               variants={childVariants}

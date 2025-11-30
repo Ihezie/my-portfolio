@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion, stagger } from "motion/react";
 import { SplitText, gsap, ScrollTrigger } from "gsap/all";
 import { useGSAP } from "@gsap/react";
+import { ArrowUpRight, Link } from "lucide-react";
 
 gsap.registerPlugin(SplitText, useGSAP, ScrollTrigger);
 
@@ -123,28 +124,35 @@ const About = () => {
         <div>
           <div className="flex flex-col gap-5 font-medium ">
             <p className="split-text">
-              I am a frontend developer dedicated to crafting clean, responsive,
-              and user-centered web interfaces. My focus is on translating
-              ideas, wireframes, and visual concepts into well-structured code
-              that works seamlessly across a wide range of devices and screen
-              sizes. I approach every project with a strong emphasis on clarity,
-              accessibility, and long-term maintainability.
+              I’m a frontend developer with a mission to craft websites that
+              leave users with a lasting impression. I have a solid grasp of the
+              technologies that power the web, and I use this knowledge to
+              create accessible, responsive, and beautiful websites. Bring those
+              designs my way, and I'll treat them right.
             </p>
+
             <p className="split-text">
-              My core skill set includes HTML, CSS, and JavaScript, complemented
-              by modern frontend frameworks and tools that help streamline
-              development workflows and improve performance. I work with
-              component-based architectures, responsive design principles, and
-              best practices that ensure consistent and scalable user
-              experiences. I also pay close attention to browser compatibility,
-              optimization techniques, and clean UI patterns.
+              I am constantly improving my skills and finding better ways to
+              complete tasks. I’m very willing to learn — I promise, I mean it.
+              I also have no qualms working within teams; check out{" "}
+              <a href="https://flickmart.app/" className="inline-flex transition-all items-start text-green-300 group">
+              FlickMart
+                <ArrowUpRight className="size-4"/>
+              </a>{" "}
+              , an online student marketplace I helped build with a group of
+              developers from my university.
             </p>
+
             <p className="split-text">
-              I enjoy transforming static designs into dynamic, interactive
-              elements that engage users while keeping performance and
-              accessibility at the forefront. Whether working with CSS
-              animations, state management, or API integrations, I focus on
-              building interfaces that feel intuitive and polished.
+              My current full-time job is trying to stay sane while pursuing a
+              Computer Science degree at the University of Nigeria, so I’m quite
+              open to job opportunities or collaborations on cool projects.
+            </p>
+
+            <p className="split-text">
+              When I’m not coding, you can find me reading a good book (Red
+              Rising for the win!), watching a TV series, or blissfully
+              listening to my favourite jams (Beyoncé is the GOAT).
             </p>
           </div>
           <motion.div
@@ -157,11 +165,17 @@ const About = () => {
             }}
           >
             <motion.h3 variants={childVariants} className="mt-6 text-white">
-              My Tools
+              My Skills
             </motion.h3>
             <div className="flex flex-wrap gap-3 mt-6 items-center mb-20">
               {skills.map(({ tech, logo }) => {
-                const darkTheme = ["Motion", "React", "GSAP", "Figma", "Javascript"];
+                const darkTheme = [
+                  "Motion",
+                  "React",
+                  "GSAP",
+                  "Figma",
+                  "Javascript",
+                ];
                 return (
                   <motion.div
                     variants={childVariants}
@@ -181,7 +195,7 @@ const About = () => {
                       alt={tech}
                       width={20}
                       height={20}
-                      className="mr-2" 
+                      className="mr-2"
                     />
                     {tech}
                   </motion.div>

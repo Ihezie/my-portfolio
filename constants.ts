@@ -5,17 +5,17 @@ import linkedinIcon from "./public/animated-icons/wired-outline-2632-logo-circle
 const socials = [
   {
     title: "github",
-    link: "",
+    link: "https://github.com/Ihezie",
     icon: githubIcon,
   },
   {
     title: "linkedin",
-    link: "",
+    link: "https://linkedin.com/in/raymond-ogbuehi",
     icon: linkedinIcon,
   },
   {
     title: "X/twitter",
-    link: "",
+    link: "https://x.com/IhezieOgbuehi",
     icon: twitterIcon,
   },
 ];
@@ -26,7 +26,7 @@ const projects = [
   {
     title: "Unripe Plantain",
     description:
-      "A women's lifestyle blog inspired by my sister, offering insights, ideas, and everyday inspiration—plus the ability to comment, like, and save your favourite posts.",
+      "A personal women's lifestyle blog inspired by my sister, offering insights, ideas, and everyday inspiration—plus the ability to comment, like, and save your favourite posts.",
     image: "/project-screenshots/unripe-plantain.png",
     techStack: ["TypeScript", "Next.js", "React", "Tailwind CSS", "Sanity"],
     githubLink: "https://github.com/Ihezie/unripe-plantain",
@@ -69,7 +69,7 @@ const projects = [
     liveLink: "https://scoot-multi-page-site.netlify.app/",
   },
   {
-    title: "Bookmark Landing Page",
+    title: "Bookmark",
     description:
       "A landing page for a fictional bookmark manager extension. This was my first time working with an animation library (Framer Motion).",
     image: "/project-screenshots/bookmark-landing-page.png",
@@ -92,8 +92,9 @@ const projects = [
       "A web-based version of Rock-Paper-Scissors that expands the original game with two additional moves and a more detailed set of interactions.",
     image: "/project-screenshots/rock-paper-scissors.png",
     techStack: ["React", "Tailwind"],
-    githubLink: "https://github.com/Ihezie/multi-step-form.git",
-    liveLink: "https://candid-empanada-2ade87.netlify.app/",
+    githubLink:
+      "https://github.com/Ihezie/rock-paper-scissors-lizard-spock-game.git",
+    liveLink: "https://rock-paper-scissors-lizard-spock-app.netlify.app/",
   },
   // {
   //   title: "Tic Tac Toe",

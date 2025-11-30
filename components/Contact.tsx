@@ -1,4 +1,4 @@
-import { RocketIcon } from "lucide-react";
+import { Mail, RocketIcon } from "lucide-react";
 import { useForm, ValidationError } from "@formspree/react";
 import { containerVariants } from "@/motion-variants";
 import { motion, stagger } from "motion/react";
@@ -70,7 +70,7 @@ const Contact = () => {
         <h4 className="uppercase ">Don't be shy. Get in touch! </h4>
         <div className="border-l h-4 border-white hidden sm:block"></div>
         <h4 className="uppercase mt-1 sm:mt-0">
-          <a className="text-green-300 underline" href="mailto:">
+          <a className="text-green-300 underline" href="mailto:raymondogb@gmail.com">
             Send an email
           </a>{" "}
           or fill out the form.
@@ -99,7 +99,7 @@ const Contact = () => {
               Thank you!
             </motion.h4>
             <motion.p variants={childVariants} className="font-medium">
-              Your response has been recorded.
+              Your response has been received. I'll get back to you ASAP.
             </motion.p>
             <div className="animate-beat">
               <PlayIconOnce icon={heart} size={80} />
