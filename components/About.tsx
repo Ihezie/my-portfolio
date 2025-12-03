@@ -5,7 +5,7 @@ import Image from "next/image";
 import { motion, stagger } from "motion/react";
 import { SplitText, gsap, ScrollTrigger } from "gsap/all";
 import { useGSAP } from "@gsap/react";
-import { ArrowUpRight, Link } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 gsap.registerPlugin(SplitText, useGSAP, ScrollTrigger);
 
@@ -42,13 +42,14 @@ const About = () => {
   useGSAP(() => {
     let paragraphs = gsap.utils.toArray<HTMLParagraphElement>(".split-text");
     paragraphs.forEach((p) => {
-      let split = SplitText.create(p, { type: "words" });
+      let split = SplitText.create(p, { type: "words", aria: "none" });
       gsap.from(split.words, {
         scrollTrigger: p,
         duration: 1,
         y: 10,
         autoAlpha: 0,
         stagger: 0.03,
+        onComplete: () => split.revert(),
       });
     });
   });
@@ -122,7 +123,7 @@ const About = () => {
           ))}
         </div>
         <div>
-          <div className="flex flex-col gap-5 font-medium ">
+          <div aria-hidden="true" className="flex flex-col gap-5 font-medium">
             <p className="split-text">
               I’m a frontend developer with a mission to craft websites that
               leave users with a lasting impression. I have a solid grasp of the
@@ -135,9 +136,13 @@ const About = () => {
               I am constantly improving my skills and finding better ways to
               complete tasks. I’m very willing to learn — I promise, I mean it.
               I also have no qualms working within teams; check out{" "}
-              <a href="https://flickmart.app/" className="inline-flex transition-all items-start text-green-300 group">
-              FlickMart
-                <ArrowUpRight className="size-4"/>
+              <a
+                aria-label="link to FlickMart"
+                href="https://flickmart.app/"
+                className="inline-flex transition-all items-start text-green-300 group"
+              >
+                FlickMart
+                <ArrowUpRight className="size-4" />
               </a>{" "}
               , an online student marketplace I helped build with a group of
               developers from my university.
@@ -150,6 +155,36 @@ const About = () => {
             </p>
 
             <p className="split-text">
+              When I’m not coding, you can find me reading a good book (Red
+              Rising for the win!), watching a TV series, or blissfully
+              listening to my favourite jams (Beyoncé is the GOAT).
+            </p>
+          </div>
+          <div className="sr-only">
+            <p>
+              I’m a frontend developer with a mission to craft websites that
+              leave users with a lasting impression. I have a solid grasp of the
+              technologies that power the web, and I use this knowledge to
+              create accessible, responsive, and beautiful websites. Bring those
+              designs my way, and I'll treat them right.
+            </p>
+            <p>
+              I am constantly improving my skills and finding better ways to
+              complete tasks. I’m very willing to learn — I promise, I mean it.
+              I also have no qualms working within teams; check out{" "}
+              <a aria-label="link to FlickMart" href="https://flickmart.app/">
+                FlickMart
+                <ArrowUpRight className="size-4" />
+              </a>{" "}
+              , an online student marketplace I helped build with a group of
+              developers from my university.
+            </p>
+            <p>
+              My current full-time job is trying to stay sane while pursuing a
+              Computer Science degree at the University of Nigeria, so I’m quite
+              open to job opportunities or collaborations on cool projects.
+            </p>
+            <p>
               When I’m not coding, you can find me reading a good book (Red
               Rising for the win!), watching a TV series, or blissfully
               listening to my favourite jams (Beyoncé is the GOAT).

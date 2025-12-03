@@ -53,11 +53,21 @@ const ProjectCard = ({
             } `}
           >
             {githubLink && (
-              <a target="_blank" href={githubLink} className="h-10">
+              <a
+                aria-label="github repository"
+                target="_blank"
+                href={githubLink}
+                className="h-10"
+              >
                 <LordIcon icon={GithubIcon} size={isLarge ? 50 : 40} />
               </a>
             )}
-            <a target="_blank" href={liveLink} className="h-10">
+            <a
+              aria-label="live website"
+              target="_blank"
+              href={liveLink}
+              className="h-10"
+            >
               <LordIcon icon={linkIcon} size={isLarge ? 50 : 40} />
             </a>
           </motion.div>

@@ -1,4 +1,6 @@
-import { Mail, RocketIcon } from "lucide-react";
+"use client"
+
+import { RocketIcon } from "lucide-react";
 import { useForm, ValidationError } from "@formspree/react";
 import { containerVariants } from "@/motion-variants";
 import { motion, stagger } from "motion/react";
@@ -65,16 +67,21 @@ const Contact = () => {
         }}
         initial="hide"
         whileInView="show"
-        className="font-semibold text-white text-center justify-center text-sm sm:flex sm:items-center sm:gap-5 sm:font-bold lg:text-base"
+        className="text-white text-center justify-center sm:flex sm:items-center sm:gap-5"
       >
-        <h4 className="uppercase ">Don't be shy. Get in touch! </h4>
-        <div className="border-l h-4 border-white hidden sm:block"></div>
-        <h4 className="uppercase mt-1 sm:mt-0">
-          <a className="text-green-300 underline" href="mailto:raymondogb@gmail.com">
+        <h3 className="uppercase font-semibold font-syne text-sm sm:font-bold lg:text-base">
+          Don't be shy. Get in touch!{" "}
+        </h3>
+        <div className="border-l  h-4 border-white hidden sm:block"></div>
+        <h3 className="uppercase font-semibold font-syne text-sm mt-1 sm:font-bold lg:text-base sm:mt-0">
+          <a
+            className="text-green-300 underline"
+            href="mailto:raymondogb@gmail.com"
+          >
             Send an email
           </a>{" "}
           or fill out the form.
-        </h4>
+        </h3>
       </motion.div>
       <motion.section
         variants={containerVariants}
@@ -164,7 +171,7 @@ const Contact = () => {
               />
             </motion.div>
             <motion.div variants={childVariants} className="form-field">
-              <label htmlFor="message" id="message">
+              <label htmlFor="message">
                 Message <span className="text-green-300">*</span>
               </label>
               <textarea
@@ -201,7 +208,6 @@ const Contact = () => {
             </motion.button>
           </form>
         )}
-
         <div className="absolute border-white border size-full top-[2.5%] -z-10 rounded-[22px] w-[94%] sm:rounded-[28px] sm:w-[96%] right-0 sm:top-[4%]"></div>
       </motion.section>
     </section>

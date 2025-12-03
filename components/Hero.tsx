@@ -51,32 +51,29 @@ const Hero = () => {
               />
             </h1>
           </div>
-          <motion.div
-            initial="hide"
-            animate="show"
-            variants={heroVariants}
-          >
+          <motion.div initial="hide" animate="show" variants={heroVariants}>
             <motion.p
               variants={childVariants}
               className="text-center mt-7 w-4/5 mx-auto font-medium lg:text-lg max-w-[750px]"
             >
-             Your friendly neighborhood frontend developer.
+              Your friendly neighborhood frontend developer.
             </motion.p>
-            <motion.a
-              variants={childVariants}
-              className="mx-auto text-[15px] mt-6 text-black flex items-center group border-white relative w-[179px]"
-              href="#projects"
-            >
-              <button className="hidden border-none sm:block p-1.5 rounded-full border-[1.5px] bg-gray-700 transition-transform duration-500 absolute -z-10 scale-0 group-hover:scale-100">
-                <ArrowDown className="size-6 text-green-300" />
-              </button>
-              <button className="btn bg-white flex gap-2 items-center duration-500 transition-transform sm:group-hover:translate-x-[38.75%]">
-                See projects
-              </button>
-              <button className="p-1.5 border-none rounded-full border-[1.5px] transition-transform absolute right-0 sm:group-hover:scale-0 duration-500 bg-gray-700">
-                <ArrowDown className="size-6 text-white" />
-              </button>
-            </motion.a>
+            <motion.button className="mx-auto block" variants={childVariants}>
+              <a
+                className="text-[15px] mt-6 text-black flex items-center group border-white relative w-[179px]"
+                href="#projects"
+              >
+                <div className="hidden border-none sm:block p-1.5 rounded-full border-[1.5px] bg-gray-700 transition-transform duration-500 absolute -z-10 scale-0 group-hover:scale-100">
+                  <ArrowDown className="size-6 text-green-300" />
+                </div>
+                <div className="btn bg-white flex gap-2 items-center duration-500 transition-transform sm:group-hover:translate-x-[38.75%]">
+                  See projects
+                </div>
+                <div className="p-1.5 border-none rounded-full border-[1.5px] transition-transform absolute right-0 sm:group-hover:scale-0 duration-500 bg-gray-700">
+                  <ArrowDown className="size-6 text-white" />
+                </div>
+              </a>
+            </motion.button>
           </motion.div>
         </div>
       )}

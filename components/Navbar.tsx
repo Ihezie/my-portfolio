@@ -58,7 +58,13 @@ const Navbar = () => {
               size = 33;
             }
             return (
-              <a target="_blank" className="inline-block" href={link} key={title}>
+              <a
+                aria-label={title}
+                target="_blank"
+                className="inline-block"
+                href={link}
+                key={title}
+              >
                 <LordIcon icon={icon} size={size} />
               </a>
             );

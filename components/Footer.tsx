@@ -1,3 +1,5 @@
+"use client"
+
 import { socials } from "@/constants";
 import LordIcon from "./LordIcon";
 import { motion } from "motion/react";
@@ -48,7 +50,7 @@ const Footer = () => {
             size = 30;
           }
           return (
-            <a target="_blank" className="inline-block" href={link} key={title}>
+            <a aria-label={title} target="_blank" className="inline-block" href={link} key={title}>
               <LordIcon icon={icon} size={size} />
             </a>
           );
