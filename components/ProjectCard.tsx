@@ -52,9 +52,11 @@ const ProjectCard = ({
               isEven ? "" : "lg:justify-end"
             } `}
           >
-            <a target="_blank" href={githubLink} className="h-10">
-              <LordIcon icon={GithubIcon} size={isLarge ? 50 : 40} />
-            </a>
+            {githubLink && (
+              <a target="_blank" href={githubLink} className="h-10">
+                <LordIcon icon={GithubIcon} size={isLarge ? 50 : 40} />
+              </a>
+            )}
             <a target="_blank" href={liveLink} className="h-10">
               <LordIcon icon={linkIcon} size={isLarge ? 50 : 40} />
             </a>

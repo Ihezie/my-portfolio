@@ -1,29 +1,14 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import {
-  Space_Mono,
-  Roboto,
-  Audiowide,
-  Syne,
-  Mona_Sans,
-  Teko,
-} from "next/font/google";
+import { Audiowide, Syne } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import { Toaster } from "@/components/ui/sonner";
-import { relative } from "path";
 
 export const metadata: Metadata = {
-  title: "Raymond Ogbuehi - Frontend Engineer",
-  description: "",
+  title: "Raymond Ogbuehi - Frontend Developer",
+  description: "Frontend developer creating websites that leave you with a smile :)",
 };
-const roboto = Roboto({
-  variable: "--font-roboto",
-  subsets: ["latin"],
-});
-const spaceMono = Space_Mono({
-  weight: ["400", "700"],
-  variable: "--font-space-mono",
-});
+
 const audiowide = Audiowide({
   weight: "400",
   variable: "--font-audiowide",
@@ -33,16 +18,6 @@ const syne = Syne({
   variable: "--font-syne",
 });
 
-const mona = Mona_Sans({
-  subsets: ["latin"],
-  variable: "--font-mona",
-});
-
-const teko = Teko({
-  subsets: ["latin"],
-  variable: "--font-teko",
-});
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -50,9 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`antialiased ${roboto.variable} ${spaceMono.variable} ${audiowide.variable} ${syne.variable} ${mona.variable} ${teko.variable}`}
-      >
+      <body className={`antialiased ${audiowide.variable} ${syne.variable}`}>
         <Navbar />
         {children}
         <Toaster

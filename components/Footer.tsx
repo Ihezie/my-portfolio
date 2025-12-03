@@ -26,13 +26,21 @@ const Footer = () => {
         once: true,
         amount: 0.8,
       }}
-      className="py-6 border-off-white border-t-2 gap-3 nav-footer-px font-semibold text-center flex flex-col-reverse justify-between items-center sm:flex-row"
+      className="py-6 relative border-off-white border-t-2 gap-3 nav-footer-px font-semibold text-center justify-between flex flex-col-reverse items-center md:flex-row"
     >
-      <p className="text-sm text-left sm:text-base">
-        © {year}{" "}
-        <span className="text-green-300">Raymond Ogbuehi</span>. All
-        rights reserved
-      </p>
+      <div className="flex flex-col gap-3 items-center md:items-start md:gap-2">
+        <p className="text-sm text-center lg:text-left sm:text-base">
+          © {year} <span className="text-green-300">Raymond Ogbuehi</span>. All
+          rights reserved
+        </p>
+        <a
+          className="text-white/50 hover:text-white/80 font-medium transition-colors order-3 text-xs sm:text-sm"
+          href="https://lordicon.com/"
+        >
+          Animated icons by Lordicon.com
+        </a>
+      </div>
+
       <div className="flex gap-8 items-center sm:gap-5">
         {socials.map(({ title, link, icon }) => {
           let size = 35;

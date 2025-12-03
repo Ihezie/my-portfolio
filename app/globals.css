@@ -4,12 +4,8 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-roboto: var(--font-roboto);
-  --font-syne: var(--syne);
-  --font-spaceMono: var(--font-space-mono);
+  --font-syne: var(--syne);;
   --font-audiowide: var(--font-audiowide);
-  --font-mona: var(--font-mona);
-  --font-teko: var(--font-teko);
   --color-background: #0e1015;
   --color-off-white: #f5f5f5;
   --color-raymond-green: #00ffa3;
