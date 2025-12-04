@@ -20,6 +20,7 @@ const socials = [
   },
 ];
 
+
 const navLinks = ["home", "projects", "about", "contact"];
 
 const projects = [
@@ -28,7 +29,14 @@ const projects = [
     description:
       "A personal women's lifestyle blog inspired by my sister, offering insights, ideas, and everyday inspiration—plus the ability to comment, like, and save your favourite posts.",
     image: "/project-screenshots/unripe-plantain.png",
-    techStack: ["TypeScript", "Next.js", "React", "Tailwind CSS", "Sanity"],
+    techStack: [
+      "TypeScript",
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "Sanity",
+      "Auth.js",
+    ],
     githubLink: "https://github.com/Ihezie/unripe-plantain",
     liveLink: "https://unripe-plantain.vercel.app/",
   },
@@ -55,9 +63,8 @@ const projects = [
       "A country information website featuring search, region-based filtering, and dark mode support. Users can browse country cards with key details and view dedicated pages for each country containing expanded information.",
     image: "/project-screenshots/where-in-the-world.png",
     techStack: ["React", "React Router", "Tailwind CSS", "Axios"],
-    githubLink:
-      "https://github.com/Ihezie/rest-countries-api-with-color-theme-switcher.git",
-    liveLink: "https://extraordinary-bubblegum-372d49.netlify.app/",
+    githubLink: "https://github.com/Ihezie/where-in-the-world",
+    liveLink: "https://where-in-the-world-fawn-eight.vercel.app/",
   },
   {
     title: "Scoot",
@@ -96,15 +103,6 @@ const projects = [
       "https://github.com/Ihezie/rock-paper-scissors-lizard-spock-game.git",
     liveLink: "https://rock-paper-scissors-lizard-spock-app.netlify.app/",
   },
-  // {
-  //   title: "Tic Tac Toe",
-  //   description:
-  //     "kfj klsa fs faslkf dsf lsl kas  ksld sf d sdf s;l asl;kf jskldfjsdklfj kdfj sdkf dsjfk dkf dk fk  dkf kdfjdkfjdk fkd k kfdjfkdfjkdf k dfjdk fkdj d dkfj dk dkfjdkfdjfkdfj dkf dkf djkf k",
-  //   image: "/project-screenshots/tic-tac-toe.png",
-  //   techStack: ["Next.js", "Tailwind", "Framer", "Sanity CMS"],
-  //   githubLink: "",
-  //   liveLink: "",
-  // },
 ];
 
 const skills = [

@@ -2,18 +2,10 @@
 
 import LordIcon from "./LordIcon";
 import { navLinks, socials } from "@/constants";
-import { useEffect, useState, useRef } from "react";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-
-gsap.registerPlugin(useGSAP); // register the hook to avoid React version discrepancies
+import { Download } from "lucide-react";
+import { useEffect, useState } from "react";
 
 const Navbar = () => {
-  // function isContentScrolledToBottom() {
-  //   const rest = window.scrollHeight - element.scrollTop;
-  //   return Math.abs(element.clientHeight - rest) < 1;
-  // }
-
   const [isVisible, setIsVisible] = useState(true);
   const [prevScrollPosition, setPreviousScrollPosition] = useState(0);
   const handleScroll = () => {
@@ -32,24 +24,17 @@ const Navbar = () => {
     };
   }, [prevScrollPosition]);
 
-  const playerConRef = useRef<HTMLDivElement>(null);
-
   return (
     <>
       <header className="nav-footer-px absolute flex justify-between pt-5 items-center w-full z-20 abs-x-center">
         <button
-          onMouseEnter={() => {
-            const mouseEvent = new MouseEvent("mouseover");
-            playerConRef.current?.dispatchEvent(mouseEvent);
-          }}
-          onMouseLeave={() => {
-            const mouseEvent = new MouseEvent("mouseout");
-            playerConRef.current?.dispatchEvent(mouseEvent);
-          }}
-          className="border-[1.5px] text-white cursor-pointer text-sm px-2.5 py-1.5 rounded-full duration-500 transition-colors font-audiowide flex gap-2 items-center hover:text-green-300 hover:border-green-300 group sm:text-base sm:px-3"
+          className="border-[1.5px] text-white cursor-pointer text-sm px-2.5 py-1.5 rounded-full duration-400 transition-all font-audiowide flex gap-2 items-center relative hover:text-green-300 hover:border-green-300 group sm:text-base sm:px-3 lg:w-24 lg:hover:w-30 "
           type="submit"
         >
-          Resume
+          <a href="/Raymond_Ogbuehi_Resume_Frontend_Developer.pdf" download>
+            Resume
+          </a>
+          <Download className="size-5 absolute duration-400 transition-all hidden lg:block right-2.5 opacity-0 group-hover:opacity-100 -z-10" />
         </button>
         <div className="flex gap-3 items-center sm:gap-5">
           {socials.map(({ title, link, icon }) => {
