@@ -3,7 +3,7 @@
 ![Project Screenshot](./screenshot.png) 
 
 ## Description
-I wanted something really unique for my personal website. It took a long time to figure out the final design because I don’t have much design training, so there was a LOT of trial and error. I’m pretty happy with the result though. If you decide to use my designs without any significant changes, don’t forget to attribute me; don’t be mean. Enjoy!
+A website showcasing my work and skills. If you decide to use my designs without any significant changes, don’t forget to attribute me; don’t be mean. Enjoy!
 
 ## Tech Stack
 - TypeScript
