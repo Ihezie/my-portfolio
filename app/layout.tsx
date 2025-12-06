@@ -3,6 +3,8 @@ import "./globals.css";
 import { Audiowide, Syne } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import { Toaster } from "@/components/ui/sonner";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   title: "Raymond Ogbuehi - Frontend Developer",
@@ -40,6 +42,8 @@ export default function RootLayout({
           position="top-center"
           mobileOffset={{ left: 0 }}
         />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
